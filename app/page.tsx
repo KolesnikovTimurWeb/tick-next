@@ -1,11 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import prisma from "../lib/prisma";
+import { prisma } from "../lib/prisma";
 
 export default async function Home() {
 
   const getStaticProps = async () => {
-    const feed = await prisma.user.findMany();
+    const feed = await prisma.post.findMany();
     console.log(feed)
     return {
       props: { feed },
