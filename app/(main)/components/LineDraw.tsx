@@ -6,7 +6,7 @@ import line from '@/assets/line.svg';
 
 const draw = {
    hidden: { pathLength: 0, opacity: 0 },
-   visible: (i) => {
+   visible: (i:number) => {
      const delay = 1 + i * 0.5;
      return {
        pathLength: 2,
