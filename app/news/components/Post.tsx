@@ -2,7 +2,7 @@
 import styles from "@/app/styles/News.module.scss"
 
    interface PostProps{
-      item: ,
+      item: Array,
    }
    const Post = ({item}:PostProps) => {
      return (
