@@ -2,8 +2,9 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Post from './components/Post'
+import styles from "@/app/styles/News.module.scss"
 
-const page = () => {
+export default function News() {
    const [data,setData] = useState([])
    const [loading,setLoading] = useState(true)
    useEffect(()=>{
@@ -22,5 +23,3 @@ const page = () => {
     </div>
   )
 }
-
-export default page
