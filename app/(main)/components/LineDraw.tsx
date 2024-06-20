@@ -4,12 +4,12 @@ import { motion, HTMLMotionProps } from "framer-motion";
 import { Component } from "react";
 import line from '@/assets/line.svg';
 
-interface CustomMotionSvg extends HTMLMotionProps<"div"> {
+interface CustomMotionSvgProps extends HTMLMotionProps<"div"> {
   initial: "initial" | "final";
   // any other thing
 }
 
-class CustomMotionSvg extends Component<CustomMotionSvg> {
+class CustomMotionSvg extends Component<CustomMotionSvgProps> {
   render() {
     return <motion.svg {...this.props}>{this.props.children}</motion.svg>;
   }
@@ -33,9 +33,9 @@ const LineDraw = () => {
   return (
     <div>
       <CustomMotionSvg    
-      width="100%"
+      width="1009px"
       height="700px"
-      initial="hidden"
+      initial="initial"
 
       whileInView={"visible"}
       viewport={{
