@@ -2,14 +2,14 @@
 import styles from "@/app/styles/News.module.scss"
 
    interface PostProps{
-      title:string,
+      item:object,
    }
-   const Post = ({title}:PostProps) => {
+   const Post = ({item}:PostProps) => {
      return (
        <div className={styles.news_post}>  
          <div className={styles.news_post_text}>
-         <h2>{title}</h2>
-         <h4>{title}</h4>
+         <h2>{item.title}</h2>
+         <h4>{item.desc}</h4>
 
          </div>
        </div>

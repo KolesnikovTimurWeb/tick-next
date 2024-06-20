@@ -18,7 +18,7 @@ export default function News() {
     <div style={{marginTop:150}}>
          <button onClick={()=>console.log(...data)}>Press</button>
          {!loading && data !== null && data.map((item,index)=>(
-            <Post key={index} title={item.title}/>
+            <Post key={index} item={item}/>
          ))}
     </div>
   )

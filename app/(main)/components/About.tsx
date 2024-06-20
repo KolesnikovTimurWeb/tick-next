@@ -30,6 +30,7 @@ const About = () => {
       <div className='container' style={{display:"flex" }}>
         <div className={styles.about_linediv}>
           <CustomMotionDiv
+          initial='hidden'
           className="box"
           animate={{
             scale: [1, 2, 2, 1, 1],
