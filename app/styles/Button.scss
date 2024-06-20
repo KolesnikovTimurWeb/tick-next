@@ -1,0 +1,37 @@
+.button{
+   padding: 10px 16px;
+   background: #fff;
+   border-radius: 12px;
+   font-size: 16px;
+   border: 1px solid transparent;
+   cursor: pointer;
+   transition: .2s ease-in-out;
+
+}
+.button:hover{
+   opacity: .8;
+   transition: .2s ease-in-out;
+}
+.button:focus{
+   opacity: .6;
+   transition: .2s ease-in-out;
+}
+.black{
+   color: #fff;
+   background: #000;
+}
+.white{
+   color: #000;
+   background: #fff;
+}
+.white-lined{
+   color: #fff;
+   background: transparent;
+   border: 1px solid #fff;
+
+}
+.black-lined{
+   color: #000;
+   background: transparent;
+   border: 1px solid #000;
+}

@@ -1,0 +1,126 @@
+
+.heading {
+  padding: 100px;
+   display: flex;
+   flex-direction: column;
+     align-items: center;
+   min-height: 80vh;
+   background: #141718;
+
+
+   &_text{
+      margin-top: 100px;
+      text-align: center;
+      max-width: 750px;
+    }
+    &_h2{
+      font-weight: 400;
+      margin-bottom: 30px;
+         
+    }
+    &_h1{
+      margin-bottom: 30px;
+      line-height: 85%;
+      font-weight: 800;
+         font-size: 74px;
+    }
+    &_buttons{
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    &_sponsors{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      opacity: .6;
+      margin-top: 100px;
+    }
+ }
+
+.about{
+  padding: 50px 0;
+  background-color: #fff;
+  color: #000;
+  &_div{
+    width: 100%;
+  }
+  &_card{
+
+    div{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  &_linediv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+  &_line{
+    width: 1px;
+    height: 100%;
+    background-color: #F4F5F6;
+  }
+  &_image{
+    margin-top: 50px;
+    width: 100%;
+    border: 2px solid #F4F5F6;
+    border-radius: 20px;
+    padding: 40px 40px 0 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+  }
+  &_cards{
+    width: 100%;
+
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );
+  }
+  &_text{
+  max-width: 350px;
+
+    h2{
+      font-weight: 800;
+      font-size: 42px;
+      line-height: 42px;
+      color: #1D1F20;
+      margin-bottom: 15px;
+
+    }
+    p{
+      font-size: 16px;
+      line-height: 22px;
+     color: #31373D;
+
+    }
+  }
+}
+
+.steps{
+  padding: 50px 0;
+  background-color: #fff;
+  color: #000;
+  position: relative;
+  height: 100vh;
+  &_div{
+    display: grid;
+    gap: 200px;
+    img:nth-child(2n){
+        margin-left: auto;
+      }
+  }
+   
+  &_bacround{
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

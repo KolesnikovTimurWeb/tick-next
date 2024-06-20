@@ -1,0 +1,32 @@
+.header{
+   display: flex;
+   align-items: center;
+   width: 100%;
+   position: fixed;
+   background: #fff;
+   padding: 20px;
+   color: #000;
+   gap: 10px;
+
+   &_logo{
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 24px;
+   }
+
+   &_navigation{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      a{
+
+         color: #000;
+      }
+   }
+   &_registration{
+      margin-right: 40px;
+      margin-left: auto;
+   }
+}

@@ -1,6 +1,10 @@
 import Image from "next/image";
-import styles from "./page.module.css";
-import { prisma } from "../lib/prisma";
+import styles from "@/app/styles/Main.module.scss";
+import { prisma } from "../../lib/prisma";
+import About from "./components/About";
+import Heading from "./components/Heading";
+import Steps from "./components/Steps";
+
 
 export default async function Home() {
 
@@ -14,10 +18,15 @@ export default async function Home() {
   };
 
   const posts = await getStaticProps()
-  console.log({ posts })
+
+
   return (
-    <main className={styles.main}>
-      <button>Click</button>
-    </main>
+   <div >
+           <Heading/>
+           <About/>
+           <Steps/>
+   </div>
+ 
+ 
   );
 }
