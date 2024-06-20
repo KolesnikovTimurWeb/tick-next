@@ -4,16 +4,6 @@ import { motion, HTMLMotionProps } from "framer-motion";
 import { Component } from "react";
 import line from '@/assets/line.svg';
 
-interface CustomMotionSvgProps extends HTMLMotionProps<"div"> {
-  initial: "initial" | "final";
-  // any other thing
-}
-
-class CustomMotionSvg extends Component<CustomMotionSvgProps> {
-  render() {
-    return <motion.svg {...this.props}>{this.props.children}</motion.svg>;
-  }
-}
 const draw = {
    hidden: { pathLength: 0, opacity: 0 },
    visible: (i) => {
@@ -32,7 +22,7 @@ const draw = {
 const LineDraw = () => {
   return (
     <div>
-      <CustomMotionSvg    
+      <motion.svg   
       width="1009px"
       height="700px"
       initial="initial"
@@ -72,7 +62,7 @@ const LineDraw = () => {
             variants={draw}
             custom={3}
       />
-      </CustomMotionSvg>
+      </motion.svg>
     </div>
   )
 }
