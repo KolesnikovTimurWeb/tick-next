@@ -4,6 +4,7 @@ import { prisma } from "../../lib/prisma";
 import About from "./components/About";
 import Heading from "./components/Heading";
 import Steps from "./components/Steps";
+import More from "./components/More";
 
 
 export default async function Home() {
@@ -25,6 +26,7 @@ export default async function Home() {
            <Heading/>
            <About/>
            <Steps/>
+           <More/>
    </div>
  
  

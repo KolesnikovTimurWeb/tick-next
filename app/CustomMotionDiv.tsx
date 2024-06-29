@@ -3,8 +3,7 @@ import { motion, HTMLMotionProps } from "framer-motion";
 import { Component } from "react";
 
 interface CustomMotionDivProps extends HTMLMotionProps<"div"> {
-  initial: "initial" | "final";
-  // any other thing
+  initial: any
 }
 
 export default class CustomMotionDiv extends Component<CustomMotionDivProps> {

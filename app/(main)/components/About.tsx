@@ -34,7 +34,7 @@ const About = () => {
           className="box"
           animate={{
             scale: [1, 2, 2, 1, 1],
-            rotate: [0, 0, 180, 180, 0],
+            rotate: [0, 0, 180, 180, 360],
             borderRadius: ["0%", "0%", "50%", "50%", "0%"]
           }}
           transition={{
