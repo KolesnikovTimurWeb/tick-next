@@ -6,7 +6,7 @@ import styles from "@/app/styles/News.module.scss"
 import useGetPosts from '../hooks/useGetPosts'
 
 const MemoizedPost = memo(Post)
-export const page =() => {
+export default function News() {
    const [loading,setLoading] = useState(true)
    const [fetch,setFetch] = useState(true)
    const {data,isLoading} = useGetPosts()
@@ -23,4 +23,3 @@ export const page =() => {
     </div>
   )
 }
-export default page
