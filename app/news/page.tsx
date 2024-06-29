@@ -15,7 +15,7 @@ export default function News() {
     <div style={{marginTop:150}}>
       <div className="container">
       <button onClick={()=>setLoading(!loading)}>Press</button>
-         {!isLoading && data?.map((post) => (
+         {!isLoading && data?.map((post:any) => (
         <Post key={post.title} item={post} />
       ))}
       </div>
