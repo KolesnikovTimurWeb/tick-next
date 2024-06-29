@@ -7,7 +7,7 @@ import { useQuery } from 'react-query'
 import { PostsList } from './components/PostsList'
 
 const MemoizedPost = memo(Post)
-export const News =() => {
+export const page =() => {
    const [loading,setLoading] = useState(true)
    const [fetch,setFetch] = useState(true)
    console.log("news")
@@ -40,4 +40,4 @@ export const News =() => {
     </div>
   )
 }
-export default News
+export default page
