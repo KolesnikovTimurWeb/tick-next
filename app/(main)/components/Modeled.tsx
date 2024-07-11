@@ -107,6 +107,7 @@ const Modeled = () => {
                      {cards.map((item,index)=> {
                         if(index === 0) return(
                            <CustomMotionDiv
+                           key={index}
                            variants={variants}>
                            <CardModeled
                             title={item.title}
@@ -118,6 +119,7 @@ const Modeled = () => {
                         )
                         return(
                            <CustomMotionDiv
+                           key={index}
                            variants={variants3}>
                            <CardModeled
                             title={item.title}
@@ -133,7 +135,8 @@ const Modeled = () => {
                      {cards.map((item,index)=> {
                         if(index === cards.length -1 ) return(
                            <CustomMotionDiv
-                           variants={variants}>
+                           variants={variants}
+                           key={index}>
                            <CardModeled
                             title={item.title}
                             users={item.users}
@@ -144,7 +147,8 @@ const Modeled = () => {
                         )
                         return(
                            <CustomMotionDiv
-                           variants={variants4}>
+                           variants={variants4}
+                           key={index}>
                            <CardModeled
                             title={item.title}
                             users={item.users}
