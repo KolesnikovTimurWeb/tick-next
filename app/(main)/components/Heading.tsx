@@ -21,8 +21,8 @@ const Heading = () => {
           </div>
 
           <div className={styles.heading_buttons}>
-            <Button variant="white">Start now</Button>
-            <Button variant="white-lined">Start now</Button>
+            <Button size='normal' variant="white">Start now</Button>
+            <Button size='normal' variant="white-lined">Start now</Button>
           </div>
           <div className={styles.heading_sponsors}>
             <CustomMotionDiv
