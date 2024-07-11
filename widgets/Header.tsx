@@ -35,7 +35,7 @@ export default function Header() {
                {session && status === 'authenticated' && (
                   <div  className={style.header_registration}>
                      {session.user?.id}
-                     <Image onClick={togglePopup} src={session.user?.image} width={40} height={40} alt='avatar'/>
+                     <Image onClick={togglePopup} src={session.user?.image || svg} width={40} height={40} alt='avatar'/>
                   </div>
                )}
                 {!session && status === 'unauthenticated'  && (
