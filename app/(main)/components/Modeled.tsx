@@ -176,6 +176,7 @@ const Modeled = () => {
                         desc={item.desc}
                         icon={item.icon}
                         index={index}
+                        key={index}
                         />
                      ))}
                   </div>
