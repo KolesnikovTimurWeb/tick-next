@@ -10,7 +10,6 @@ import { auth } from "@/auth";
 import AuthProvider from "./AuthProvider";
 import { Suspense } from "react";
 const inter = Inter({ subsets: ["latin"] });
-import {NextUIProvider} from "@nextui-org/react";
 const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
 const queryClient = new QueryClient({
   defaultOptions: {
