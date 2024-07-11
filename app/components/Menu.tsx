@@ -11,7 +11,7 @@ import Link from 'next/link'
 const Menu = ({ show, onClose }:{show:any , onClose:any}) => {
    const { data: session,status } = useSession() 
 
-   const ref = useRef();
+   const ref = useRef<HTMLInputElement>(null)
 
    useEffect(() => {
      const handleClickOutside = (event:any) => {
