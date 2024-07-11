@@ -1,19 +1,27 @@
 .header{
-   display: flex;
-   align-items: center;
+  
    width: 100%;
    position: fixed;
    background: #fff;
-   padding: 20px;
+   padding: 20px 0;
    color: #000;
-   gap: 10px;
    z-index: 100;
+   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+   &_div{
+      display: flex;
+      align-items: center;
+      gap: 20px;
 
+   }
    &_logo{
       display: flex;
       align-items: center;
       font-weight: 700;
       font-size: 24px;
+
+      p{
+         color: #000;
+      }
    }
 
    &_navigation{
@@ -22,12 +30,84 @@
       gap: 10px;
 
       a{
-
+         font-size: 18px;
+         font-weight: 500;
          color: #000;
       }
    }
    &_registration{
-      margin-right: 40px;
+      gap: 10px;
+      display: flex;
+      align-items: center;
       margin-left: auto;
+
+      img{
+         border-radius: 50%;
+      }
+   }
+
+   &_menu{
+      width: 150px;
+      background: #fff;
+      filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.12));
+      position: fixed;
+      top: 100px;
+      right: 200px;
+      border-radius: 20px;
+      padding: 20px;
+      h2{
+         font-size: 24px;
+
+      }
+      &_account{
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         padding: 6px;
+         border-radius: 4px;
+         &:hover{
+            background: #f9f9f9;
+         }
+         img{
+            border-radius: 50%;
+         }
+         h3{
+            font-size: 12px;
+         }
+      }
+      &_link{
+         margin-bottom: 10px;
+         display: flex;
+         align-items: center;
+         background: none;
+         gap: 10px;
+         color: #0f172a;
+         font-weight: 500; 
+         padding: 6px;
+         border-radius: 4px;
+         font-family: "Gilroy";
+         font-size: 15px;
+         &:hover{
+            background: #f9f9f9;
+         }
+      }
+      &_signOut{
+         margin-bottom: 10px;
+         display: flex;
+         align-items: center;
+         width: 100%;
+         gap: 10px;
+
+         background: none;
+         color: #0f172a;
+         font-weight: 500; 
+         padding: 6px;
+         border-radius: 4px;
+         font-family: "Gilroy";
+         font-size: 15px;
+         &:hover{
+            background: #f9f9f9;
+         }
+      }
    }
 }

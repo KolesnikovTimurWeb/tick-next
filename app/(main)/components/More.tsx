@@ -23,6 +23,21 @@ interface AboutCardProps{
   image:logo,
   title:"Quick actions",
   desc:"Streamline your workflow with customizable shortcuts.",
+},
+{
+  image:logo,
+  title:"Quick actions",
+  desc:"Streamline your workflow with customizable shortcuts.",
+},
+{
+image:logo,
+title:"Quick actions",
+desc:"Streamline your workflow with customizable shortcuts.",
+},
+{
+image:logo,
+title:"Quick actions",
+desc:"Streamline your workflow with customizable shortcuts.",
 }]
 const variants = {
   hidden: { opacity: 0 },
@@ -33,7 +48,8 @@ const variants = {
      <CustomMotionDiv
      variants={variants}
      initial='hidden'
-     animate='visible'
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.5 }}
      transition={{
         delay: 0.15 * index,
         ease: "easeInOut",

@@ -5,7 +5,10 @@ import OpenAi  from '@/assets/Open AI.svg';
 import StackBlitz  from '@/assets/Stack Blitz.svg';
 import Github  from '@/assets/github.svg';
 import Image from 'next/image';
-
+import CustomMotionDiv from '@/app/CustomMotionDiv';
+const variants = {
+  hover:{transition: { duration: 0.4 }, scale:1.2}
+}
 const Heading = () => {
   return (
     <div className={styles.heading}>
@@ -22,9 +25,29 @@ const Heading = () => {
             <Button variant="white-lined">Start now</Button>
           </div>
           <div className={styles.heading_sponsors}>
+            <CustomMotionDiv
+                 initial="visible"
+                 whileHover={"hover"}
+                 variants={variants}
+              
+            >
               <Image src={OpenAi} alt='Sponsors'/>
+            </CustomMotionDiv>
+            <CustomMotionDiv
+                 initial="visible"
+                 whileHover={"hover"}
+                 variants={variants}
+            >
               <Image src={StackBlitz} alt='Sponsors'/>
+            </CustomMotionDiv>
+            <CustomMotionDiv
+                 initial="visible"
+                 whileHover={"hover"}
+                 variants={variants}
+            >
               <Image src={Github} alt='Sponsors'/>
+            </CustomMotionDiv>
+          
           </div>
       </div>
     </div>

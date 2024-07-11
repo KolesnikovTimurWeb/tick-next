@@ -34,6 +34,8 @@
 *{
   margin: 0;
   padding: 0;
+  font-family:"Gilroy" sans-serif !important;
+
 }
 html,
 body {
@@ -45,7 +47,6 @@ body {
 
 body {
 
-  font-family:"Gilroy";
   color: #fff;
 }
 
@@ -107,4 +108,11 @@ input {
 .container{
   max-width: 80%;
   margin: 0 auto;
+}
+
+@media screen and (min-width:1540px) {
+  .container{
+    max-width: 1440px;
+    margin: 0 auto;
+  }
 }

@@ -1,0 +1,13 @@
+.product{
+   min-height: 100vh;
+   margin-top: 100px;
+   display: flex;
+   flex-direction: column;
+
+   &_form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+   }
+}

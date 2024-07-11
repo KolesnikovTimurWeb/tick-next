@@ -23,7 +23,13 @@ const AboutCard = ({icon , title , children}:AboutCardProps) =>{
     </div>
   )
 }
-
+const variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+}
+const variants2 = {
+  visible: { x:40 },
+}
 const About = () => {
   return (
     <div className={styles.about}>
@@ -70,7 +76,16 @@ const About = () => {
               Create your dream CRM with powerful, flexible templates for every use case.
               </AboutCard>
             </div>
-            <Image src={aboutImg} alt='aboutImg'/>
+            <CustomMotionDiv
+                 initial="hidden"
+                 whileHover={"visible"}
+                 viewport={{
+                    amount:'all',
+                  }}
+            className={styles.about_image_div}>
+           
+             <Image src={aboutImg} alt='aboutImg'/>
+            </CustomMotionDiv>
           </div>
         </div>
 

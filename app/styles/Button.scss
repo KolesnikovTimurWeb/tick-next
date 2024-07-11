@@ -1,10 +1,11 @@
 .button{
-   padding: 10px 16px;
+   padding: 12px 16px;
    background: #fff;
    border-radius: 12px;
    font-size: 16px;
    border: 1px solid transparent;
-   cursor: pointer;
+   cursor: pointer; 
+   font-weight: 500;
    transition: .2s ease-in-out;
 
 }
@@ -34,4 +35,16 @@
    color: #000;
    background: transparent;
    border: 1px solid #000;
+}
+
+.big{
+   padding: 24px 32px;
+}
+.normal{
+   padding: 14px 24px;
+
+}
+.small{
+   padding: 12px 16px;
+
 }
