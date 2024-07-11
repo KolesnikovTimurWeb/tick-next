@@ -38,7 +38,7 @@ const Menu = ({ show, onClose }:{show:any , onClose:any}) => {
                  <div > 
                      {session && status === 'authenticated' && (
                         <div className={style.header_menu_account}>
-                           <Image src={session.user?.image || null} width={40} height={40} alt='avatar'/>
+                           <Image src={session.user?.image || settings} width={40} height={40} alt='avatar'/>
                            <h3>{session.user?.name}</h3>
                         </div>
                      )}
