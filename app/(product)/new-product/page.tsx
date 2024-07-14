@@ -9,6 +9,9 @@ import { toast } from 'react-toastify';
 import { ToastContainer } from "react-toastify";
 
 import 'react-toastify/dist/ReactToastify.css';
+import { useSession } from "next-auth/react";
+import Image from "next/image";
+import Loader from "@/app/components/Loader";
 
 const categories = [
   "Media",
@@ -46,6 +49,7 @@ export default function NewProduct() {
   const [desc,setDesc]=useState("")
   const [logo,setLogo]=useState("")
   const [selectedCategories,setSelectedCategories]=useState<string[]>([])
+  const { data: session,status } = useSession() 
 
   const previousStep = () =>{
     if(step === 1) return
@@ -111,6 +115,14 @@ export default function NewProduct() {
   return (
    <div className={styles.product}>
       <div className="container">
+        {status === 'loading' && (
+          <div className={styles.loader}>
+            <Loader />
+          </div>
+          
+        )}
+
+       {status !== 'loading' && (           
          <div className={styles.product_step}>
             {step === 1 && (
               <CustomMotionDiv
@@ -204,6 +216,7 @@ export default function NewProduct() {
             )}
             </div>
          </div>
+         )}
       </div>
 
       <ToastContainer />
