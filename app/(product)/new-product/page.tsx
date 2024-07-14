@@ -45,7 +45,7 @@ export default function NewProduct() {
   const [title,setTitle]=useState("")
   const [desc,setDesc]=useState("")
   const [logo,setLogo]=useState("")
-  const [selectedCategories,setSelectedCategories]=useState([])
+  const [selectedCategories,setSelectedCategories]=useState<string[]>([])
 
   const previousStep = () =>{
     if(step === 1) return
