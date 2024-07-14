@@ -35,8 +35,9 @@ export default async function Products() {
                   
                   <div
                   className={styles.product_card_category}>
-                  {item.categories.map(item => (
+                  {item.categories.map((item,index) => (
                      <CustomMotionDiv
+                     key={index}
                      whileTap={{scale:.8}}
                      whileHover={{scale:.9}}
                      >

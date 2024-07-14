@@ -12,7 +12,7 @@ export default function SignIn() {
    <div className={styles.signIn}>
       <div className="container">
       <div className={styles.signIn_text}>
-        <h2>See what's new in tech</h2>
+        <h2>See what&apos;s new in tech</h2>
         <p>Join our community of friendly folks discovering and sharing the latest product in tech</p>
       </div>
       <div className={styles.signIn_buttons}>
