@@ -106,6 +106,7 @@ const Modeled = () => {
             <CustomMotionDiv
             initial="initial"
             whileInView={`${isMobile && "hover"}`}
+            viewport={{amount: 0.5 }}
             whileHover={"hover"}
               className={styles.modeled_splite_block_item}>
                <p><span>A CRM for any use case.</span> Easily create custom objects that match your business’ unique data structure.</p>

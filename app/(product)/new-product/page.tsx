@@ -157,8 +157,7 @@ export default function NewProduct() {
               >
                 <h2>📊 What category is your product</h2>
                 <h3>Keep it simple and clear. Describe your product in a way that makes it easy for people to understand what it does.</h3>
-                <div className={styles.product_input}>
-                  <label htmlFor="title">Choose your category</label>
+                <div className={styles.product_input_category}>
                   {categories.map((category, index) => {  
                   return(
                     <CustomMotionDiv
