@@ -29,8 +29,8 @@ export default async function Products() {
         </div>
       ) : (
          <div className={styles.product_block}>
-            {products.map((item)=>(
-               <div className={styles.product_card}>
+            {products.map((item,index)=>(
+               <div key={index} className={styles.product_card}>
                   <h2>{item.name}</h2>
                   
                   <div
