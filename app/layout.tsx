@@ -40,6 +40,7 @@ export default  function RootLayout({
             <Header/>
               {children}
               <Footer/>
+
           </AuthProvider>
 
         </QueryClientProvider>

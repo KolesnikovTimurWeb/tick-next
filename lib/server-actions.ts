@@ -5,23 +5,52 @@ import { prisma } from "@/lib/prisma";
 import { useSession } from "next-auth/react";
 
 interface ProductProps{
-   name:string,
-   slug:string
+  name:string,
+  description:string,
+   slug:string,
+   category: string[],
 }
+export const getOwnerProducts = async () => {
+  const authenticatedUser = await auth();
 
-export const createProduct = async({name,slug}:ProductProps) => {
+  if (!authenticatedUser) {
+    return [];
+  }
+
+  const userId = authenticatedUser.user?.id;
+
+  const products = await prisma.product.findMany({
+    where: {
+      userId,
+    },
+    include: {
+      categories: true,
+    },
+  });
+  return products;
+};
+export const createProduct = async({name,description,slug,category}:ProductProps) => {
    try {
       const user = await auth() 
       if (!user) {
          throw new Error("You must be signed in to create a product");
        }
-       console.log(user.user?.id)
       const userId = user?.user?.id
-       console.log(userId)
       const product = await prisma.product.create({
         data: {
           name,
+          description,
           slug,
+          categories: {
+            connectOrCreate: category.map((name) => ({
+              where: {
+                name,
+              },
+              create: {
+                name,
+              },
+            })),
+          },
           status: "PENDING",
           user: {
             connect: {
@@ -30,10 +59,23 @@ export const createProduct = async({name,slug}:ProductProps) => {
           },
         },
       });
-      console.log(product)
       return product;
     } catch (error) {
       console.error(error);
       return error;
     }
 }
+
+
+export const getActiveProducts = async () => {
+  const products = await prisma.product.findMany({
+    where: {
+      status: "ACTIVE",
+    },
+    include: {
+      categories: true,
+    },
+  });
+
+  return products;
+};

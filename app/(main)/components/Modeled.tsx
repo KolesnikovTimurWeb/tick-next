@@ -1,3 +1,4 @@
+"use client"
 import styles from "@/app/styles/Main.module.scss"
 import Image from "next/image"
 import aboutImg from '@/assets/about-img.webp';
@@ -9,16 +10,10 @@ import company3 from "@/assets/companies/Gmail.svg";
 import company4 from "@/assets/companies/Hightouch.svg";
 import company5 from "@/assets/companies/Outlook.svg";
 import company6 from "@/assets/companies/Segment.svg";
+import { useEffect, useState } from "react";
+import {isMobile } from 'react-device-detect';
 
-
-const variants = {
-   hover:{transition: { duration: 0.5 },  scale:0}
- }
- const variants2 = {
-   initial: { opacity: 0, scale:0 , x:-250},
-   hover: {transition: { duration: 0.3 }, opacity: 1, scale:1 },
- }
- const variants3 = {
+ const variants = {
    hover:{transition: { duration: 0.2 }, x:-250}
  }
  const variants4 = {
@@ -45,6 +40,14 @@ const reviews = [
    desc:"Can we have a feature to add a custom domain to IndiePage?",
     icon:"https://insigh.to/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmarc.be50937c.png&w=32&q=75",
 }
+]
+const images = [
+   {image:company1},
+   {image:company2},
+   {image:company3},
+   {image:company4},
+   {image:company5},
+   {image:company6},
 ]
 const cards = [
    {
@@ -81,6 +84,8 @@ const cards = [
 
 
 const Modeled = () => {
+
+   console.log(isMobile)
   return (
    <div className={styles.modeled}>
     <div className="container">
@@ -100,27 +105,16 @@ const Modeled = () => {
          <div className={styles.modeled_splite_block}>
             <CustomMotionDiv
             initial="initial"
+            whileInView={`${isMobile && "hover"}`}
             whileHover={"hover"}
               className={styles.modeled_splite_block_item}>
                <p><span>A CRM for any use case.</span> Easily create custom objects that match your business’ unique data structure.</p>
                   <div  className={styles.modeled_motion}>
                      {cards.map((item,index)=> {
-                        if(index === 0) return(
-                           <CustomMotionDiv
-                           key={index}
-                           variants={variants}>
-                           <CardModeled
-                            title={item.title}
-                            users={item.users}
-                            button={item.button}                          
-                            />
-                           </CustomMotionDiv>
-                          
-                        )
                         return(
                            <CustomMotionDiv
                            key={index}
-                           variants={variants3}>
+                           variants={variants}>
                            <CardModeled
                             title={item.title}
                             users={item.users}
@@ -133,18 +127,6 @@ const Modeled = () => {
                   </div>
                <div  className={styles.modeled_motion}>
                      {cards.map((item,index)=> {
-                        if(index === cards.length -1 ) return(
-                           <CustomMotionDiv
-                           variants={variants}
-                           key={index}>
-                           <CardModeled
-                            title={item.title}
-                            users={item.users}
-                            button={item.button}                          
-                            />
-                           </CustomMotionDiv>
-                          
-                        )
                         return(
                            <CustomMotionDiv
                            variants={variants4}
@@ -187,12 +169,31 @@ const Modeled = () => {
                 
                </CustomMotionDiv>
                <div className={styles.modeled_splite_block_sm}>
-                     <Image src={company1} width={40} height={40} alt="companies"/>
-                     <Image src={company2} width={40} height={40} alt="companies"/>
-                     <Image src={company3} width={40} height={40} alt="companies"/>
-                     <Image src={company4} width={40} height={40} alt="companies"/>
-                     <Image src={company5} width={40} height={40} alt="companies"/>
-                     <Image src={company6} width={40} height={40} alt="companies"/>
+                  <CustomMotionDiv
+                  className={styles.modeled_splite_block_animate}
+                  animate={{
+                     x: ['0%', '-400px'],
+                     transition: {
+                         ease: 'linear',
+                         duration: 5,
+                         repeat: Infinity,
+                     }
+                 }}
+                 >
+                  {images.map((item,index)=> (
+                     <div key={index} className={styles.modeled_splite_block_sm_img}>
+
+                        <Image  src={item.image} alt="iamge" width={40}/>
+                     </div>
+                  ))}
+                        {images.map((item,index)=> (
+                     <div key={index} className={styles.modeled_splite_block_sm_img}>
+
+                        <Image src={item.image} alt="iamge" width={40}/>
+                     </div>
+                  ))}
+                  </CustomMotionDiv>
+
                </div>
             </div>
          </div>

@@ -6,7 +6,7 @@ export default async function layoutProducts ({children,}: Readonly<{children: R
    const user = await auth()
    if(!user) return redirect('/login')
   return (
-    <div>
+    <div style={{background:"#fff"}}>
       {children}
     </div>
   )

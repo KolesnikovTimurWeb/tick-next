@@ -1,6 +1,6 @@
 
 .heading {
-  padding: 100px;
+  padding: 100px 0;
    display: flex;
    flex-direction: column;
      align-items: center;
@@ -24,6 +24,11 @@
       font-weight: 800;
          font-size: 74px;
     }
+    @media screen and (max-width:600px) {
+      &_h1{
+           font-size: 52px;
+      }
+    }
     &_buttons{
       display: flex;
       justify-content: center;
@@ -35,6 +40,7 @@
       align-items: center;
       opacity: .6;
       margin-top: 100px;
+      gap: 20px;
     }
  }
 
@@ -67,7 +73,6 @@
   }
   &_image{
     margin-top: 50px;
-    width: 100%;
     border: 2px solid #F4F5F6;
     border-radius: 20px;
     padding: 40px 40px 0 40px;
@@ -160,11 +165,19 @@
   background: #141718;
   color: #fff;
 
+
   h2{
     font-size: 52px;
     font-weight: 700;
     line-height: 58px;
   }
+      @media screen and (max-width:600px) {
+     h2{
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 58px;
+  }
+    }
   h3{
     font-size: 20px;
     line-height: 33px;
@@ -199,10 +212,15 @@
 
     h2{
       font-size: 52px;
-      line-height: 58px;
+      line-height: 54px;
       font-weight: 700;
       max-width: 600px;
-
+      margin-bottom: 10px;
+    }
+    @media screen and (max-width:600px) {
+     h2{
+    font-size: 42px;
+      }
     }
     p{
       color: #EDEEF0;
@@ -229,7 +247,12 @@
       }
     }
   }
-
+  @media screen and (max-width:600px) {
+    &_block{
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+    }
+  }
   &_splite_block{
     display: grid;
     gap: 20px;
@@ -240,6 +263,14 @@
       border-radius: 20px;
       background: #F3F4F5;
     }
+  }
+
+  @media screen and (max-width:1100px) {
+    &_splite_block{
+      display: flex;
+      flex-direction: column;
+    }
+  
   }
 
   &_card{
@@ -305,6 +336,8 @@
   &_splite_block{
     margin-top: 40px;
 
+
+
     p{
       color: #666B71;
       font-size: 14px;
@@ -342,6 +375,13 @@
       }
 
     }
+
+    &_animate{
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
     &_sm{
       margin-top: 20px;
       background: #fff;
@@ -353,7 +393,9 @@
       gap: 10px;
       justify-content: space-between;
 
-      img{
+      overflow: hidden;
+      
+      &_img{
         padding: 10px;
       filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.12));
         background: #fff;
@@ -381,7 +423,17 @@
       color: #000;
       line-height: 15px;
     }
-
+    @media screen and (max-width:600px) {
+      h2{
+        color: #000;
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      p{
+        font-size: 14px;
+      }
+    }
     &_avatar{
       display: flex;
       align-items: center;

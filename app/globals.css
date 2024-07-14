@@ -8,28 +8,43 @@
 @font-face {
   font-family: 'Gilroy';
   font-weight: 500;
+  font-style: sans-serif;
 
   src: local('Gilroy-Medium'), url(../fonts/Gilroy-Medium.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Gilroy';
   font-weight: 400;
+  font-style: sans-serif;
+
   src: local('Gilroy-Regular'), url(../fonts/Gilroy-Regular.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Gilroy';
+  font-weight: 600;
+  font-style: sans-serif;
+
+  src: local('Gilroy-Regular'), url(../fonts/Gilroy-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Gilroy';
   font-weight: 200;
+  font-style: sans-serif;
+
   src: local('Gilroy-Light'), url(../fonts/Gilroy-Light.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Gilroy';
   font-weight: 900;
+  font-style: sans-serif;
+
   src: local('Gilroy-Heavy'), url(../fonts/Gilroy-Heavy.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Gilroy';
   font-weight: 800;
   src: local('Gilroy-ExtraBold'), url(../fonts/Gilroy-ExtraBold.ttf) format('truetype');
+  font-style: sans-serif;
 }
 *{
   margin: 0;
@@ -113,6 +128,21 @@ input {
 @media screen and (min-width:1540px) {
   .container{
     max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+
+@media screen and (max-width:1140px) {
+  .container{
+    max-width: 85%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .container{
+    max-width: 90%;
     margin: 0 auto;
   }
 }

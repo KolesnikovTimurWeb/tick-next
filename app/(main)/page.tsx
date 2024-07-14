@@ -8,9 +8,12 @@ import Steps from "./components/Steps";
 import More from "./components/More";
 import Modeled from "./components/Modeled";
 import { auth } from "@/auth";
+import { getActiveProducts } from "@/lib/server-actions";
 
 
 export default async function Home() {
+  const products = await getActiveProducts()
+
   return (
    <div >
     

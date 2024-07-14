@@ -2,12 +2,17 @@ import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
 import logOut from '@/assets/icons/log-out.svg'
 import settings from '@/assets/icons/settings.svg'
-import product from '@/assets/icons/product.svg'
-import newProduct from '@/assets/icons/plus.svg'
 import style from '@/app/styles/Header.module.scss'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 
+// ICONS
+import { GoPlus } from "react-icons/go";
+import { LuBox } from "react-icons/lu";
+import { IoSettingsOutline } from "react-icons/io5";
+
+import { FaRegNewspaper } from "react-icons/fa";
+import { IoLogOutOutline } from "react-icons/io5";
 const Menu = ({ show, onClose }:{show:any , onClose:any}) => {
    const { data: session,status } = useSession() 
 
@@ -38,27 +43,34 @@ const Menu = ({ show, onClose }:{show:any , onClose:any}) => {
                  <div > 
                      {session && status === 'authenticated' && (
                         <div className={style.header_menu_account}>
-                           <Image src={session.user?.image || settings} width={40} height={40} alt='avatar'/>
+                           <Image  src={session.user?.image || settings} width={40} height={40} alt='avatar'/>
                            <h3>{session.user?.name}</h3>
                         </div>
                      )}
                 </div>
-                <Link className={style.header_menu_link} href={'/products'}>
-                        <Image src={newProduct} alt='icon' width={20} height={20}/>
+                <div className={style.header_menu_mobile}>
+
+                <Link className={style.header_menu_link} href={'/news'}>
+                     <FaRegNewspaper size={20}/>
+                        News
+                </Link>
+                </div>
+                <Link className={style.header_menu_link} href={'/new-product'}>
+                     <GoPlus size={20}/>
                         New Product
                 </Link>
                 <Link className={style.header_menu_link} href={'/products'}>
-                        <Image src={product} alt='icon' width={20} height={20}/>
+                     <LuBox size={20}/>
+
                         Products
                 </Link>
                 <Link className={style.header_menu_link} href={'/setings'}>
-                     <Image src={settings} alt='icon' width={20} height={20}/>
-
+                     <IoSettingsOutline size={20}/>
                      Settings
                 </Link>
 
                  <button className={style.header_menu_signOut} onClick={()=> signOut()}>
-                    <Image src={logOut} alt='icon' width={20} height={20}/>
+                       <IoLogOutOutline size={20}/>
                         
                         Sign Out
                  </button>

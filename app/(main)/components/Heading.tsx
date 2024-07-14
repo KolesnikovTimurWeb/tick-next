@@ -45,7 +45,7 @@ const Heading = () => {
                  whileHover={"hover"}
                  variants={variants}
             >
-              <Image src={Github} alt='Sponsors'/>
+              <Image src={OpenAi} alt='Sponsors'/>
             </CustomMotionDiv>
           
           </div>

@@ -35,6 +35,11 @@
          color: #000;
       }
    }
+   @media screen and (max-width:600px) {
+      &_navigation{
+         display: none;
+      }
+   }
    &_registration{
       gap: 10px;
       display: flex;
@@ -58,6 +63,14 @@
       h2{
          font-size: 24px;
 
+      }
+      &_mobile{
+         display: none;
+      }
+      @media screen and (max-width:600px) {
+         &_mobile{
+            display: block;
+         }
       }
       &_account{
          display: flex;
@@ -109,5 +122,11 @@
             background: #f9f9f9;
          }
       }
+   }
+
+   @media screen and (max-width:600px) {
+      &_menu{
+         right: 20px;
+         }
    }
 }

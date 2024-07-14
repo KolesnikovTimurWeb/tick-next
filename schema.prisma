@@ -49,6 +49,11 @@ model User {
 }
 
 
+model Category {
+  id       String    @id @default(cuid())
+  name     String    @unique
+  products Product[] // Many-to-many relation with Product
+}
 
 
 model Product {
@@ -57,7 +62,8 @@ model Product {
   slug        String     @unique
   // headline    String
   // rank        Int
-  // description String
+  description String
+  categories  Category[] 
   // logo        String
   // releaseDate String
   // website     String
