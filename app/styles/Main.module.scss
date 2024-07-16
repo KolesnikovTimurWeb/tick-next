@@ -294,8 +294,7 @@
 
   &_card{
     width: 100%;
-
-    filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.12));
+    border: 1px solid #E6E7EA;
     background: #fff;
     color: #000;
     border-radius: 12px;
@@ -361,7 +360,6 @@
       color: #666B71;
       font-size: 14px;
       font-weight: 500;
-      margin:0 20px;
 
       span{
         color: #000;

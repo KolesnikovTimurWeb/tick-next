@@ -65,6 +65,11 @@ export const createProduct = async({name,description,slug,category}:ProductProps
       return error;
     }
 }
+export const getActiveUsers = async () => {
+  const users = await prisma.user.findMany();
+
+  return users;
+};
 
 
 export const getActiveProducts = async () => {

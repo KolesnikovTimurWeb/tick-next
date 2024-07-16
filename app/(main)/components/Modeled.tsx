@@ -43,7 +43,6 @@ const reviews = [
 ]
 const images = [
    {image:company1},
-   {image:company2},
    {image:company3},
    {image:company4},
    {image:company5},
@@ -184,13 +183,13 @@ const Modeled = () => {
                   {images.map((item,index)=> (
                      <div key={index} className={styles.modeled_splite_block_sm_img}>
 
-                        <Image  src={item.image} alt="iamge" width={40}/>
+                        <Image  src={item.image} alt="iamge" width={40} height={40}/>
                      </div>
                   ))}
                         {images.map((item,index)=> (
                      <div key={index} className={styles.modeled_splite_block_sm_img}>
 
-                        <Image src={item.image} alt="iamge" width={40}/>
+                        <Image src={item.image} alt="iamge" width={40} height={40}/>
                      </div>
                   ))}
                   </CustomMotionDiv>

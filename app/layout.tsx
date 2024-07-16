@@ -9,6 +9,7 @@ import Footer from "@/widgets/Footer";
 import { auth } from "@/auth";
 import AuthProvider from "./AuthProvider";
 import { Suspense } from "react";
+import LoadingPage from "./components/LoadingPage";
 const inter = Inter({ subsets: ["latin"] });
 const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
 const queryClient = new QueryClient({
@@ -31,7 +32,7 @@ export default  function RootLayout({
     <html lang="en">
       <body className={inter.className }>
         
-       <Suspense fallback={"Loading"}>    
+       <Suspense fallback={<LoadingPage/>}>    
         <QueryClientProvider client={queryClient}>
 
         <Next13ProgressBar height="2px" color="#111" options={{ showSpinner: false }} showOnShallow />

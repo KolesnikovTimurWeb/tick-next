@@ -1,58 +1,38 @@
 
 import { prisma } from "@/lib/prisma";
 import styles from "@/app/styles/Product.module.scss";
-import { useSession } from "next-auth/react";
-import { auth } from "@/auth";
-import { getOwnerProducts } from "@/lib/server-actions";
-import CustomMotionDiv from "@/app/CustomMotionDiv";
+import { getActiveProducts, getActiveUsers } from "@/lib/server-actions";
 
 
 export default async function Products() {
-   const authenticatedUser = await auth();
-
-   const products =await getOwnerProducts()
+   const products = await getActiveProducts()
   return (
-   <div className={styles.product}>
+   <div className={styles.allproduct}>
       <div className="container">
-         <h2 className={styles.product_title}>📁My products</h2>
-         <p className={styles.product_desc}>
-            Looks like you have not created any products yet, click the button
-            below to get started
-          </p>
-         {products.length === 0 ? (
-        <div className={styles.product_nofound}>
-          <h1 className="text-3xl font-bold">No products found </h1>
-          <p className="text-gray-500">
-            Looks like you have not created any products yet, click the button
-            below to get started
-          </p>
-        </div>
-      ) : (
-         <div className={styles.product_block}>
-            {products.map((item,index)=>(
-               <div key={index} className={styles.product_card}>
+         <div className={styles.allproduct_block}>
+            {products.map((item,index)=> (
+               <div className={styles.allproduct_card}>
                   <h2>{item.name}</h2>
                   
-                  <div
-                  className={styles.product_card_category}>
-                  {item.categories.map((item,index) => (
-                     <CustomMotionDiv
-                     key={index}
-                     whileTap={{scale:.8}}
-                     whileHover={{scale:.9}}
-                     >
-                        {item.name}
-                     </CustomMotionDiv>
-                  ))}
+                  <div className={styles.allproduct_card_date}>
+                  
+                  <span>{item.createdAt.toDateString()}</span>
+                 
+
                   </div>
 
+                  <div className={styles.allproduct_categories}>
+                     {item.categories.map((item, index)=> (
+                        <div className={styles.allproduct_card} key={index}>
+                           <p>{item.name}</p>
+                        </div>
+                     ))}
+                  </div>
                </div>
             ))}
          </div>
-       
-   
-      )}
-      </div>
+     
+      </div>   
    </div>
  
  

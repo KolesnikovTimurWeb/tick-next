@@ -9,11 +9,11 @@ import More from "./components/More";
 import Modeled from "./components/Modeled";
 import { auth } from "@/auth";
 import { getActiveProducts } from "@/lib/server-actions";
+import { useSession } from "next-auth/react";
 
 
 export default async function Home() {
   const products = await getActiveProducts()
-
   return (
    <div >
     

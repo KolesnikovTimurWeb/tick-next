@@ -179,14 +179,54 @@
 
 
 
+.allproduct{
+   min-height: 80vh;
+   padding-top: 150px;
+   &_block{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 10px;
+   }
+   &_categories{
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
 
+      p{
+         text-align: center;
+         font-size: 12px;
+         margin: 0 auto;
+      }
+   }
+   &_card{
+      position: relative;
+      padding: 10px;
+      color: #000;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      
+   &_date{
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+
+      span{
+         font-size: 12px;
+         font-weight: 200;
+         
+      }
+   }
+   }
+
+}
 
 
 
 
 
 .loader{
-   min-height: 80vh;
+   min-height: 60vh;
    display: flex;
    align-items: center;
    justify-content: center;

@@ -10,7 +10,7 @@ import Link from 'next/link'
 import { GoPlus } from "react-icons/go";
 import { LuBox } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
-
+import { PiDropboxLogo } from "react-icons/pi";
 import { FaRegNewspaper } from "react-icons/fa";
 import { IoLogOutOutline } from "react-icons/io5";
 const Menu = ({ show, onClose }:{show:any , onClose:any}) => {
@@ -49,7 +49,10 @@ const Menu = ({ show, onClose }:{show:any , onClose:any}) => {
                      )}
                 </div>
                 <div className={style.header_menu_mobile}>
-
+                <Link className={style.header_menu_link} href={'/news'}>
+                     <PiDropboxLogo size={20}/>
+                        Products
+                </Link>
                 <Link className={style.header_menu_link} href={'/news'}>
                      <FaRegNewspaper size={20}/>
                         News
@@ -59,10 +62,10 @@ const Menu = ({ show, onClose }:{show:any , onClose:any}) => {
                      <GoPlus size={20}/>
                         New Product
                 </Link>
-                <Link className={style.header_menu_link} href={'/products'}>
+                <Link className={style.header_menu_link} href={'/my-products'}>
                      <LuBox size={20}/>
 
-                        Products
+                       My Products
                 </Link>
                 <Link className={style.header_menu_link} href={'/setings'}>
                      <IoSettingsOutline size={20}/>

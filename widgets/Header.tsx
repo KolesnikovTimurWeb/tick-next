@@ -10,7 +10,6 @@ import { signOut, useSession } from 'next-auth/react'
 import Menu from '@/app/components/Menu'
 
 
-
 export default function Header() {
    const [showPopup, setShowPopup] = useState(false);
 
@@ -29,9 +28,8 @@ export default function Header() {
                </Link>
           
                <div className={style.header_navigation}>
-               
                   <Link href={'/news'}>News</Link>
-                  <Link href={'/tasks'}>Tasks</Link>
+                  <Link href={'/products'}>Products</Link>
                </div>
 
                <div className={style.header_registration}>
